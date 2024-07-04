@@ -1,0 +1,46 @@
+{% extends "categorias/index.html" %}
+
+
+{% block titulo %}
+    <h2 class="text-white-50 mx-auto mt-2 mb-5">Vuelos</h2> 
+{% endblock titulo %}
+
+
+{% block contiene %}   
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Aerolinea</th>
+            <th>Mail</th>
+            <th>Nro. Vuelo</th>
+            <th>Origen</th>
+            <th>Destino</th>           
+            <th>Fecha Vuelo</th>
+            <th>Hora Vuelo</th>
+            <th>Valor Pasaje</th>
+            <th>Fecha Reserva</th>
+            <th>Fecha Compra</th>
+            <th>Usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in vuelos %}
+         <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.aerolinea }}</td>
+            <td>{{ c.mail }}</td>
+            <td>{{ c.numero }}</td>
+            <td>{{ c.origen }}</td>
+            <td>{{ c.destino }}</td>
+            <td>{{ c.fecha }}</td>
+            <td>{{ c.hora }}</td>
+            <td>{{ c.precio }}</td>
+            <td>{{ c.fecha_reserva }}</td>
+            <td>{{ c.fecha_compra }}</td>
+            <td>{{ c.usuario }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contiene %}

@@ -1,0 +1,48 @@
+{% extends "categorias/index.html" %}
+
+
+{% block titulo %}
+    <h2 class="text-white-50 mx-auto mt-2 mb-5">Traslados</h2> 
+{% endblock titulo %}
+
+
+{% block contiene %}   
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Compañia</th>
+            <th>Mail</th>
+            <th>Ciudad</th>
+            <th>Pais</th>
+            <th>Origen</th>
+            <th>Destino</th>           
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Valor</th>
+            <th>Fecha Reserva</th>
+            <th>Fecha Compra</th>
+            <th>Usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in traslados %}
+         <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.mail }}</td>
+            <td>{{ c.ciudad }}</td>
+            <td>{{ c.pais }}</td>
+            <td>{{ c.origen }}</td>
+            <td>{{ c.destino }}</td>
+            <td>{{ c.fecha }}</td>
+            <td>{{ c.hora }}</td>
+            <td>{{ c.precio }}</td>
+            <td>{{ c.fecha_reserva }}</td>
+            <td>{{ c.fecha_compra }}</td>
+            <td>{{ c.usuario }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contiene %}
